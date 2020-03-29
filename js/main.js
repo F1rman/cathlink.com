@@ -1,5 +1,5 @@
 var app = angular.module("Artmoney", ['ngMaterial','ngAnimate' ]);
-app.controller("Global", function($scope, $rootScope) {
+app.controller("Global", function($scope, $rootScope, $mdDialog) {
 
 
   $scope.config = {
@@ -16,10 +16,44 @@ app.controller("Global", function($scope, $rootScope) {
   // Initialize Firebase
   firebase.initializeApp($scope.config);
   var messagesRef = firebase.database().ref('links');
-  $scope.data = [
-    {sitename:'catchlink'}
-  ]
+  $scope.data =
+    {
+      sitename:'CatchLink'
+    }
 
+  $scope.showPrompt = function(ev) {
+     // Appending dialog to document.body to cover sidenav in docs app
+     var confirm = $mdDialog.prompt()
+       .title('What would you name your dog?')
+       .textContent('Bowser is a common name.')
+       .placeholder('Dog name')
+       .ariaLabel('Dog name')
+       .initialValue('Buddy')
+       .targetEvent(ev)
+       .required(true)
+       .ok('Okay!')
+       .cancel('I\'m a cat person');
+
+     $mdDialog.show(confirm).then(function(result) {
+       $scope.status = 'You decided to name your dog ' + result + '.';
+     }, function() {
+       $scope.status = 'You didn\'t name your dog.';
+     });
+   };
+
+   function DialogController($scope, $mdDialog) {
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
     // $.get('https://node.verblike.com/mail', {
     //   body: ['https://cathlink.com/', hi],
     //   to: 'ihorkharchyshyn@gmail.com'

@@ -17,11 +17,16 @@
   <meta name="keywords" content="catchlink">
 </head>
 
-<body ng-app="Artmoney" ng-controller="Global">
+<body ng-app="Artmoney" ng-controller="Global" ng-cloak>
 
+  <h1 id="sitename">{{data.sitename}}</h1>
+  <div id="content_panel" class="md-whiteframe-4dp">
+    <md-button class="md-primary md-raised" ng-click="showPrompt($event)">
+      Add new link
+    </md-button>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure impedit, ipsa iste fugit provident voluptatum cum doloribus consectetur perferendis quo nulla illo nostrum, accusamus recusandae sunt autem voluptates ratione officia!
+  </div>
 
-  <h1>{{data}}</h1>
-  <md-button class="md-raised">Button</md-button>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
