@@ -54,6 +54,15 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
         $mdDialog.hide(answer);
       };
     }
+    $scope.auth = ()=>{
+      firebase.auth().signInWithCustomToken(token).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+    }
+
     // $.get('https://node.verblike.com/mail', {
     //   body: ['https://cathlink.com/', hi],
     //   to: 'ihorkharchyshyn@gmail.com'
