@@ -18,7 +18,13 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
   var messagesRef = firebase.database().ref('links');
   $scope.data =
     {
-      sitename:'CatchLink'
+      sitename:'CatchLink',
+      nav:{
+        isOpen:false,
+        selectedDirection:'left',
+        selectedMode:'md-scale',
+      },
+      
     }
 
   $scope.showPrompt = function(ev) {
@@ -54,8 +60,18 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
         $mdDialog.hide(answer);
       };
     }
+      $scope.signed = false;
     $scope.auth = ()=>{
-      firebase.auth().signInWithCustomToken(token).catch(function(error) {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          $scope.user = firebase.auth().currentUser;
+          $scope.signed = true;
+        }
+        else {
+          $scope.signed = false;
+        }
+
+      }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
