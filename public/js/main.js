@@ -4,7 +4,7 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
   angular.module('Artmoney').config(function($mdThemingProvider) {
     // Enable browser color
     $mdThemingProvider.enableBrowserColor({
-      theme: 'myTheme', // Default is 'default'
+      theme: 'default', // Default is 'default'
       palette: 'warn', // Default is 'primary', any basic material palette and extended palettes are available
       hue: '600' // Default is '800'
     });
