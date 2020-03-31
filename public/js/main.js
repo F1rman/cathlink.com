@@ -1,6 +1,7 @@
 var app = angular.module("Artmoney", ['ngMaterial','ngAnimate' ]);
-app.myAppModule
-  .config(function($mdThemingProvider) {
+
+app.controller("Global", function($scope, $rootScope, $mdDialog) {
+  angular.module('Artmoney').config(function($mdThemingProvider) {
     // Enable browser color
     $mdThemingProvider.enableBrowserColor({
       theme: 'myTheme', // Default is 'default'
@@ -8,8 +9,6 @@ app.myAppModule
       hue: '200' // Default is '800'
     });
   });
-app.controller("Global", function($scope, $rootScope, $mdDialog) {
-
 
   $scope.config = {
     apiKey: "AIzaSyANByuaeDUXVVc9FxXt522AvKj-sbytUCA",
