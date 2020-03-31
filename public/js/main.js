@@ -1,4 +1,13 @@
 var app = angular.module("Artmoney", ['ngMaterial','ngAnimate' ]);
+app.myAppModule
+  .config(function($mdThemingProvider) {
+    // Enable browser color
+    $mdThemingProvider.enableBrowserColor({
+      theme: 'myTheme', // Default is 'default'
+      palette: 'accent', // Default is 'primary', any basic material palette and extended palettes are available
+      hue: '200' // Default is '800'
+    });
+  });
 app.controller("Global", function($scope, $rootScope, $mdDialog) {
 
 
@@ -24,9 +33,14 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
         selectedDirection:'left',
         selectedMode:'md-scale',
       },
-      
+
+    }
+    $scope.status = 1;
+    $scope.goto = (status)=>{
+      $scope.status = status;
     }
 
+ $scope.currentNavItem = 'page0';
   $scope.showPrompt = function(ev) {
      // Appending dialog to document.body to cover sidenav in docs app
      var confirm = $mdDialog.prompt()

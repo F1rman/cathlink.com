@@ -13,35 +13,64 @@ body {
   width: 100%;
   padding: 0;
   position: absolute;
-  background: #becccc;
+  background: #fafafa;
   top: 0;
   left: 0;
 }
 header{
   display: flex;
-align-items: center;
-justify-content: space-between;
-width: 90%;
-margin: 0 auto;
-max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  max-height: 15vh;
+  min-height: 15vh;
 }
 #sitename {
   color: white;
   font-size: 60px;
   text-align: center;
+  cursor: pointer;
   text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 7px 0 #97a1a0, 0 8px 0 #949e9d, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+&::selection {
+  background: transparent;
+}
 }
 
 #content_panel {
   margin: 0 auto;
-width: 90%;
-max-width: 1200px;
-background: #fff;
-padding: 40px;
-box-sizing: border-box;
-border-radius: 20px;
+  width: 90%;
+  max-width: 1200px;
+  background: #fafafa;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 50px;
+  max-height: 80vh;
+  min-height: 80vh;
 }
 
 .md-button{
   border-radius: 10px;
+}
+.md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-fab, .md-button.md-default-theme.md-warn.md-raised, .md-button.md-warn.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised{
+    background-color: #fafafa;
+}
+.md-button.md-default-theme.md-warn.md-fab:not([disabled]).md-focused, .md-button.md-warn.md-fab:not([disabled]).md-focused, .md-button.md-default-theme.md-warn.md-fab:not([disabled]):hover, .md-button.md-warn.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-warn.md-raised:not([disabled]).md-focused, .md-button.md-warn.md-raised:not([disabled]).md-focused, .md-button.md-default-theme.md-warn.md-raised:not([disabled]):hover, .md-button.md-warn.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]).md-focused, .md-button.md-primary.md-fab:not([disabled]).md-focused, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-raised:not([disabled]).md-focused, .md-button.md-primary.md-raised:not([disabled]).md-focused, .md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover{
+      background-color: #fafafa;
+}
+
+._md-nav-bar-list{
+      justify-content: space-around;
+}
+
+.md-button.md-default-theme.md-warn.md-fab:not([disabled]) md-icon, .md-button.md-warn.md-fab:not([disabled]) md-icon, .md-button.md-default-theme.md-warn.md-raised:not([disabled]) md-icon, .md-button.md-warn.md-raised:not([disabled]) md-icon {
+    color: rgb(66, 66, 66);
+}
+md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
+    color: rgb(66, 66, 66);
+    background: rgb(66, 66, 66);
+}
+.md-button.md-default-theme.md-accent, .md-button.md-accent {
+    color: rgb(66, 66, 66);
 }
