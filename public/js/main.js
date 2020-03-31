@@ -6,7 +6,8 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
     $mdThemingProvider.enableBrowserColor({
       theme: 'default', // Default is 'default'
       palette: 'warn', // Default is 'primary', any basic material palette and extended palettes are available
-      hue: '600' // Default is '800'
+      hue: '600', // Default is '800'
+      primaryPalette: 'blue'
     });
   });
 
