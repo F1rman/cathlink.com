@@ -2,13 +2,12 @@ var app = angular.module("Artmoney", ['ngMaterial','ngAnimate' ]);
 
 app.controller("Global", function($scope, $rootScope, $mdDialog) {
   angular.module('Artmoney').config(function($mdThemingProvider) {
-    // Enable browser color
-    $mdThemingProvider.enableBrowserColor({
-      theme: 'default', // Default is 'default'
-      palette: 'warn', // Default is 'primary', any basic material palette and extended palettes are available
-      hue: '600', // Default is '800'
-      primaryPalette: 'blue'
-    });
+  $mdThemingProvider
+    .theme('default')
+    .primaryPalette('blue')
+    .accentPalette('teal')
+    .warnPalette('red')
+    .backgroundPalette('grey');
   });
 
   $scope.config = {
