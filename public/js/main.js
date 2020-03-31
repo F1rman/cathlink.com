@@ -5,8 +5,8 @@ app.controller("Global", function($scope, $rootScope, $mdDialog) {
     // Enable browser color
     $mdThemingProvider.enableBrowserColor({
       theme: 'myTheme', // Default is 'default'
-      palette: 'accent', // Default is 'primary', any basic material palette and extended palettes are available
-      hue: '200' // Default is '800'
+      palette: 'warn', // Default is 'primary', any basic material palette and extended palettes are available
+      hue: '600' // Default is '800'
     });
   });
 
